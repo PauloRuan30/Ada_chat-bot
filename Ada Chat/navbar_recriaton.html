@@ -1,0 +1,119 @@
+<!--
+    Escritura do autor:
+        Principais partes e comentários do código estão em ENGLISH para melhor entendimento geral
+        comentarios auxiliares e demais em português
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style src="css/styles.css" rel="stylesheet"></style>
+</head>
+
+<body>
+    <nav class="border-gray-200 dark:border-gray-600 shadow rounded-b-2xl">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-x1 p-4">
+            <a href="https://www.tre-ce.jus.br/#/" class="flex items-center ml-15">
+                <img src="images/thumbnail_ada_transparent.png" class="h-12 ml-3 mr-3" alt="ADA Lovelace" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ada</span>
+            </a>
+            
+            <!-- Dropdown toggle button -->
+            <button data-collapse-toggle="Dropdown menu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-full-cta" aria-expanded="false">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+
+            <div id="mega-menu-full-cta" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-2 md:mt-0 mr-4">
+                    <!-- ==== Dropdown Hover 1 ==== -->
+                    <div x-data="{ openDropdown1: false }" @mouseleave="openDropdown1 = false" class="relative">
+                        <!-- Dropdown toggle button for Dropdown Hover 1 -->
+                        <button @mouseover="openDropdown1 = true" class="flex flex-row justify-between grid-cols-1 block p-2 bg-white bg-gray-50 rounded-md">
+                            <span class="mr-1">Dropdown Hover</span>
+                            <svg class="w-6 h-6 text-white text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                       
+                        <!-- Dropdown hover menu definitions -->
+                    <div class="flex flex-row">
+                        <div x-show="openDropdown1" x-transition:enter.duration.500ms x-transition:leave.duration.800ms
+                            class="absolute right-0 w-80 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl grid-cols-2">
+                            <div class="p-3 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                                <ul class="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
+                                    <li>
+                                        <a href="#" class="block p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div class="font-semibold">Online Stores</div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div class="font-semibold">Segmentation</div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div class="font-semibold">Marketing CRM</div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- ==== Dropdown Hover 2 ==== -->
+                    <div x-data="{ openDropdown2: false }" @mouseleave="openDropdown2 = false" class="relative">
+                        <!-- Dropdown toggle button for Dropdown Hover 2 -->
+                        <button @mouseover="openDropdown2 = true" class="flex items-center block p-2 bg-white bg-gray-50 rounded-md ">
+                            <span class="mr-1">About</span>
+                            <svg class="w-6 h-6 text-white text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown 2 menu definitions -->
+                        <div x-show="openDropdown2" x-transition:enter.duration.500ms x-transition:leave.duration.800ms
+                            class="absolute right-0 w-48 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl">
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                                Lorem ipsum dolor sit amet. Est magni nostrum ab accusantium autem ut quos voluptatum aut nostrum minus aut iure officiis. Eum necessitatibus explicabo aut corrupti consequatur in alias vitae aut provident repellat et odit amet ad quia pariatur.
+                            </a>
+                            <!-- Segunda  -->
+                            <li>
+                                <a href="#" class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group px-4 py-2 text-2xl font-semibold">
+                                    <span class="sr-only">TRE-CE</span>
+                                    <img src="images/TRE_Logo_sem_titulo.png" class="h-12 ml-3 mr-3" alt="TRE-CE Logo"/>
+                                    TRE-CE
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <!-- ==== Dropdown Hover 3 ==== -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    </main>   
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>     
