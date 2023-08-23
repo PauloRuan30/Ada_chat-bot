@@ -1,6 +1,10 @@
 const switchToggle = document.querySelector('#switch-toggle');
 const switchBackground = document.querySelector('#switch-bg');
+const rootHTMLNode = document.querySelector(".body");
 let isDarkmode = localStorage.getItem('isDarkmode') === 'true';
+
+const dModeString = "color-scheme: dark"
+const lModeString = "color-scheme: light"
 
 const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -16,7 +20,6 @@ function toggleTheme() {
     switchTheme();
   }
   
-
 function switchTheme() {
   if (isDarkmode) {
     document.body.classList.add('dark'); // Add the dark mode class to the body
@@ -27,6 +30,7 @@ function switchTheme() {
     setTimeout(() => {
       switchToggle.innerHTML = darkIcon;
     }, 250);
+    rootHTMLNode.style = dModeString
   } else {
     document.body.classList.remove('dark'); // Remove the dark mode class from the body
     switchToggle.classList.add('bg-yellow-500', '-translate-x-2');
@@ -36,6 +40,7 @@ function switchTheme() {
     setTimeout(() => {
       switchToggle.innerHTML = lightIcon;
     }, 250);
+    rootHTMLNode.style = lModeString
   }
 }
 
