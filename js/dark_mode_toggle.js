@@ -1,3 +1,6 @@
+console.log("Dev POV:");
+console.log("Desculpa ai se ficou ruim é por que eu faço jogo e não site, ODEIO WEB!!");
+
 const switchToggle = document.querySelector('#switch-toggle');
 const switchBackground = document.querySelector('#switch-bg');
 const rootHTMLNode = document.querySelector(".body");
